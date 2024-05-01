@@ -3,15 +3,14 @@
 	"id": "anti-creeper",
 	"version": "${version}",
 	"name": "Anti Creeper",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Configurable mod that allows for different protections from creepers",
 	"authors": [
-		"Me!"
+		"FirstNameLastName"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/First-Name-Last-Name/Anti-Creeper"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/anti-creeper/icon.png",
 	"environment": "*",
 	"entrypoints": {
