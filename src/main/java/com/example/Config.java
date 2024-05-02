@@ -14,7 +14,7 @@ public class Config {
     private final Path propertiesPath;
 
     private boolean protectAreas = true;
-    private final ArrayList<String[]> areas = new ArrayList<>();
+    private ArrayList<String[]> areas = new ArrayList<>();
     private boolean destroy = true;
 
 
@@ -34,7 +34,9 @@ public class Config {
     public void setProtectAreas(boolean protectAreas) {
         this.protectAreas = protectAreas;
     }
-
+    public void setAreas(ArrayList<String[]> areas) {
+        this.areas = areas;
+    }
 
     public Config(Path propertiesPath) {
         this.propertiesPath = propertiesPath;

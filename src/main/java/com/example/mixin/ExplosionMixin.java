@@ -29,7 +29,7 @@ public abstract class ExplosionMixin {
 
 	@Redirect(method = "collectBlocksAndDamageEntities", at = @At(value = "INVOKE", target = "Ljava/util/Set;add(Ljava/lang/Object;)Z"))
 	private boolean addWithException(Set<BlockPos> instance, Object o) {
-		if (getProtectedAreasEnabled() && entity.getType() == EntityType.CREEPER && isProtected((BlockPos) o)) {
+		if (entity.getType() == EntityType.CREEPER && ((AntiCreeper.getConfig().getProtectAreas() && isProtected((BlockPos) o)) || !AntiCreeper.getConfig().getDestroy())) {
 			return false;
 		}
 		return instance.add((BlockPos) o);
@@ -59,10 +59,6 @@ public abstract class ExplosionMixin {
 		return isProtected;
 	}
 
-	@Unique
-	private static boolean getProtectedAreasEnabled() {
-		return AntiCreeper.getConfig().getProtectAreas();
-	}
 	@Unique
 	private static float getX1(int i) {
 		return Float.parseFloat(AntiCreeper.getConfig().getAreas().get(i)[0]);
