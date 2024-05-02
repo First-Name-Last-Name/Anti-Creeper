@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class CreeperMixin {
     @Redirect(method = "explode", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;createExplosion(Lnet/minecraft/entity/Entity;DDDFLnet/minecraft/world/World$ExplosionSourceType;)Lnet/minecraft/world/explosion/Explosion;"))
     public Explosion createExplosion(World world, @Nullable Entity entity, double x, double y, double z, float power, World.ExplosionSourceType explosionSourceType) {
-        return world.createExplosion(entity, x, y, z, 10.0F, getCreeperExplosionSourceType()); // change 10.0F to power!!
+        return world.createExplosion(entity, x, y, z, power, getCreeperExplosionSourceType());
     }
 
     @Unique
