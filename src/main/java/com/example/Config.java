@@ -74,7 +74,8 @@ public class Config {
     public void save() throws IOException {
         Properties properties = new Properties();
 
-
+        
+        properties.setProperty("destroy", String.valueOf(destroy));
         properties.setProperty("protectAreas", String.valueOf(protectAreas));
 
         properties.setProperty("areas", "");
@@ -84,8 +85,6 @@ public class Config {
             }
             properties.setProperty("areas", properties.getProperty("areas")+";");
         }
-
-        properties.setProperty("destroy", String.valueOf(destroy));
 
 
         // NB: This uses ISO-8859-1 with unicode escapes as the encoding
