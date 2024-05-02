@@ -119,7 +119,7 @@ public abstract class ExplosionMixin {
 		return Math.abs(getX2(i)-getX1(i));
 	}
 	@Unique
-	private static float getLZ(int i) { // length of the rectangle along the x-axis
+	private static float getLZ(int i) { // length of the rectangle along the z-axis
 		return Math.abs(getZ2(i)-getZ1(i));
 	}
 	@Unique
