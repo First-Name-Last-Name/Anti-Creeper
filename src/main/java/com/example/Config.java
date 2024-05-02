@@ -28,6 +28,13 @@ public class Config {
         return destroy;
     }
 
+    public void setDestroy(boolean destroy) {
+        this.destroy = destroy;
+    }
+    public void setProtectAreas(boolean protectAreas) {
+        this.protectAreas = protectAreas;
+    }
+
 
     public Config(Path propertiesPath) {
         this.propertiesPath = propertiesPath;
@@ -53,6 +60,7 @@ public class Config {
         destroy = !"false".equals(properties.getProperty("destroy"));
         protectAreas = !"false".equals(properties.getProperty("protectAreas"));
 
+        areas.clear();
         try {
             for (String area : properties.getProperty("areas").split(";")) {
                 try {
@@ -74,7 +82,7 @@ public class Config {
     public void save() throws IOException {
         Properties properties = new Properties();
 
-        
+
         properties.setProperty("destroy", String.valueOf(destroy));
         properties.setProperty("protectAreas", String.valueOf(protectAreas));
 
@@ -87,7 +95,6 @@ public class Config {
         }
 
 
-        // NB: This uses ISO-8859-1 with unicode escapes as the encoding
         try (OutputStream os = Files.newOutputStream(propertiesPath)) {
             properties.store(os, "Anti Creeper properties");
         }
