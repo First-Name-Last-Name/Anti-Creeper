@@ -17,9 +17,9 @@ Unfortunately, there is not yet a command to set up or delete protected areas.
 
 To do so, open your minecraft folder and go to /config. Open anti-creeper.properties. Here you see all mod settings. Next to areas= you can add areas to protect. 
 
-To add an area, write: <x1>,<z1>,<x2>,<z2>,<type>;
+To add an area, write: \<x1>,\<z1>,\<x2>,\<z2>,\<type>;
 
-without any spaces. <x1> and <z1> should be replaced with the x and z coordinates of one of the blocks you chose to define the protected area. <x2> and <z2> should be replaced with the x and z coordinates of the other block. <type> should be replaced with either circle or rectangle, depending on the shape you want to protect. 
+without any spaces. \<x1> and \<z1> should be replaced with the x and z coordinates of one of the blocks you chose to define the protected area. \<x2> and \<z2> should be replaced with the x and z coordinates of the other block. \<type> should be replaced with either circle or rectangle, depending on the shape you want to protect. 
 
 An example would be: areas=0,0,8,8,rectangle;0,0,-8,-8,circle;
 
